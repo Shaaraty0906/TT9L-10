@@ -1,4 +1,4 @@
-import pygame, sys
+import pygame, sys 
 
 pygame.init()
 
@@ -46,7 +46,7 @@ def play():
 
         SCREEN.fill("black")
 
-        PLAY_TEXT = get_font(45).render("info and rules about the game.", True, "White")
+        PLAY_TEXT = get_font(45).render("info about the game.", True, "White")
         PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
