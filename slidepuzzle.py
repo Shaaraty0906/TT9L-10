@@ -56,7 +56,7 @@ while not game_over:
             break
     if solved:
         game_over = True
-        print("Congratulations, you solved the puzzle!")
+        print("Congrats, you solved the puzzle!")
 
     # Update the display
     pygame.display.update()
