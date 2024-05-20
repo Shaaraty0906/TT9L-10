@@ -5,8 +5,8 @@ import random
 pygame.init()
 
 # Set the dimensions of the puzzle
-WIDTH, HEIGHT = 400, 400
-ROWS, COLS = 4, 4
+WIDTH, HEIGHT = 500, 500
+ROWS, COLS = 5, 5
 
 # Load the image
 image = pygame.image.load('monalisa.jpg')
