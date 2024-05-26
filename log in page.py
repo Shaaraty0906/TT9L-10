@@ -36,7 +36,7 @@ def access(option):
 def begin():
     global option
     print("="*45)
-    print(" |  Welcome to the log in page  |")
+    print(" |  Welcome to log in page  |")
     print("-"*45)
     print("Press 'login' if you have an account")
     print("Press 'register' if you don't have an account")
