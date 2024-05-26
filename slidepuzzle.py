@@ -9,7 +9,7 @@ WIDTH, HEIGHT = 500, 500
 ROWS, COLS = 5, 5
 
 # Load the image
-image = pygame.image.load('monalisa.jpg')
+image = pygame.image.load('monalisa.jpeg')
 image = pygame.transform.scale(image, (WIDTH, HEIGHT))
 
 # Split the image into tiles
