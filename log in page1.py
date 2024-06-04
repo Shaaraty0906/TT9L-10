@@ -80,7 +80,7 @@ def main():
 
         # Buttons
         login_button = pygame.Rect(490, 500, 150, 60)
-        register_button = pygame.Rect(690, 500, 150, 60)
+        register_button = pygame.Rect(690, 500, 190, 60)
         pygame.draw.rect(SCREEN, BLUE, login_button)
         pygame.draw.rect(SCREEN, BLUE, register_button)
         draw_text('Login', button_font, WHITE, SCREEN, 515, 510)
