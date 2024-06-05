@@ -79,7 +79,7 @@ def main():
         draw_text('*' * len(user_password), input_font, BLACK, SCREEN, input_boxes[1].x+5, input_boxes[1].y+5)
 
         # Buttons
-        login_button = pygame.Rect(490, 500, 150, 60)
+        login_button = pygame.Rect(500, 500, 150, 60)
         register_button = pygame.Rect(696, 500, 220, 60)
         pygame.draw.rect(SCREEN, WHITE, login_button)
         pygame.draw.rect(SCREEN, WHITE, register_button)
