@@ -20,8 +20,15 @@ for i in range(ROWS):
         tile = image.subsurface((j * TILE_SIZE, i * TILE_SIZE,i * TILE_SIZE,TILE_SIZE,TILE_SIZE))
         tiles.append(tile)
 
-# Shuffle the tiles
-random.shuffle(tiles)
+#Create a list to keep track of the tile positions
+tile_positions = list(range(ROWS * COLS))
+empty_tile_index = ROWS * COLS - 1
+Tile_positions[empty_tile_index] = None
+
+
+
+
+
 
 # Create the game window
 window = pygame.display.set_mode((WIDTH, HEIGHT))
