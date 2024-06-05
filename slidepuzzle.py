@@ -33,6 +33,11 @@ random.shuffle(tile_positions[:-1])
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption('Slide Puzzle')
 
+def is_adjacent(index1, index2):
+    row1, col1 = divmod(index1, COLS)
+    row2, col2 = divmod(index2, COLS)
+    return abs(row1 - row2) + abs(col1 - col2) == 1
+
 # Game variables
 empty_tile_index = ROWS * COLS - 1
 game_over = False
