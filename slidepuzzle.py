@@ -7,16 +7,17 @@ pygame.init()
 # Set the dimensions of the puzzle
 WIDTH, HEIGHT = 500, 500
 ROWS, COLS = 5, 5
+TILE_SIZE = WIDTH // COLS
 
 # Load the image
-image = pygame.image.load('monalisa.jpg')
+image = pygame.image.load("TT9L-10\BLUELION.jpg")
 image = pygame.transform.scale(image, (WIDTH, HEIGHT))
 
 # Split the image into tiles
 tiles = []
 for i in range(ROWS):
     for j in range(COLS):
-        tile = image.subsurface((j * WIDTH // COLS, i * HEIGHT // ROWS, WIDTH // COLS, HEIGHT // ROWS))
+        tile = image.subsurface((j * TILE_SIZE, i * TILE_SIZE,i * TILE_SIZE,TILE_SIZE,TILE_SIZE))
         tiles.append(tile)
 
 # Shuffle the tiles
