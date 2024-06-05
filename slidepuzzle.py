@@ -49,8 +49,8 @@ while not game_over:
             game_over = True
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x, y = pygame.mouse.get_pos()
-            tile_index = (y // (HEIGHT // ROWS)) * COLS + x // (WIDTH // COLS)
-            if abs(tile_index - empty_tile_index) in [1, COLS] and 0 <= tile_index < ROWS * COLS:
+            tile_index = (y // TILE_SIZE) * COLS + x // TILE_SIZE
+            if is_adjacent(tile_index,empty_tile_index) and tile_positions[tile_index] is not None:
                 tiles[empty_tile_index], tiles[tile_index] = tiles[tile_index], tiles[empty_tile_index]
                 empty_tile_index = tile_index
 
