@@ -25,9 +25,8 @@ tile_positions = list(range(ROWS * COLS))
 empty_tile_index = ROWS * COLS - 1
 Tile_positions[empty_tile_index] = None
 
-
-
-
+# Shuffle the tiles, except the last one
+random.shuffle(tile_positions[:-1])
 
 
 # Create the game window
