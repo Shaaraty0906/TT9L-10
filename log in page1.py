@@ -69,7 +69,7 @@ def main():
     running = True
     while running:
         SCREEN.blit(BG, (0, 0))
-        draw_text('Login Page' if mode == 'login' else 'Register Page', font, WHITE, SCREEN, 540, 100)
+        draw_text('LOGIN PAGE' if mode == 'login' else 'Register Page', font, WHITE, SCREEN, 540, 100)
         draw_text('Username:', input_font, WHITE, SCREEN, 340, 250)
         draw_text('Password:', input_font, WHITE, SCREEN, 340, 350)
         pygame.draw.rect(SCREEN, WHITE if active_box == 0 else GRAY, input_boxes[0], 2)
