@@ -94,7 +94,7 @@ pause_start_ticks = 0
                     swap(tile_order, empty_index, empty_index - 1)
 
             elif event.type == pygame.MOUSEBUTTONDOWN:
-    if PAUSE_BUTTON_RECT.collidepoint(event.pos):
+        if PAUSE_BUTTON_RECT.collidepoint(event.pos):
         if paused:
             paused = False
             start_ticks += pygame.time.get_ticks() - pause_start_ticks
@@ -121,15 +121,17 @@ pause_start_ticks = 0
         pygame.draw.rect(screen, pause_button_color, PAUSE_BUTTON_RECT)
         pause_text = font.render("Pause" if not paused else "Resume", True, (0, 0, 0))
         screen.blit(pause_text, (PAUSE_BUTTON_RECT.x + 5, PAUSE_BUTTON_RECT.y + 5))      
+
+    #Exit button display
+
+        exit_button_color = EXIT_BUTTON_COLOR if not EXIT_BUTTON_RECT.collidepoint(mouse_pos) else EXIT_BUTTON_HOVER_COLOR
+        pygame.draw.rect(screen, exit_button_color, EXIT_BUTTON_RECT)
+        exit_text = font.render("Exit", True, (0, 0, 0))
+        screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
           
           
           
-          
-          
-        
-    
-      
-         if is_solved(tile_order):
+    if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
 
