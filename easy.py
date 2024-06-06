@@ -71,6 +71,8 @@ def easy_level():
 
 #TIMER
     start_ticks = pygame.time.get_ticks()
+    paused = False
+pause_start_ticks = 0
 
     running = True
     while running:
