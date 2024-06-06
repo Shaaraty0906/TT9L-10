@@ -118,7 +118,7 @@ def main_menu():
                 if PLAY_BUTTON.checkForInput(MENU_MOUSE_POS):
                     play()
                 if INSTRUCTION_BUTTON.checkForInput(MENU_MOUSE_POS):
-                    options()
+                    INSTRUCTION()
                 if QUIT_BUTTON.checkForInput(MENU_MOUSE_POS):
                     pygame.quit()
                     sys.exit()
