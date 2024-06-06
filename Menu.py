@@ -74,7 +74,7 @@ def options():
 
         INSTRUCTION_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
         INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
+        SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(640, 460), 
                             text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
