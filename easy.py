@@ -69,6 +69,9 @@ def easy_level():
     empty_tile = tile_order.index(len(tiles) - 1)
     tile_order[empty_tile], tile_order[-1] = tile_order[-1], tile_order[empty_tile]
 
+#TIMER
+    start_ticks = pygame.time.get_ticks()
+
     running = True
     while running:
         for event in pygame.event.get():
