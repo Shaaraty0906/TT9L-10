@@ -92,6 +92,11 @@ def easy_level():
         draw_grid(tiles, grid_size, tile_order)
         pygame.display.flip()
 
+    # CALCULATION FOR TIMER
+        seconds = (pygame.time.get_ticks() - start_ticks) / 1000
+        minutes = int(seconds // 60)
+        seconds = int(seconds % 60)
+
         if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
