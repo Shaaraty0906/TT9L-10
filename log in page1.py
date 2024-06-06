@@ -16,15 +16,13 @@ GRAY = (200, 200, 200)
 BLUE = (0, 0, 255)
 RED = (255, 0, 0)
 
-# Fonts code
 font = pygame.font.Font(None, 74)
 input_font = pygame.font.Font(None, 50)
 button_font = pygame.font.Font(None, 60)
 
-# Input boxes for the typing
 input_boxes = [
     pygame.Rect(560, 250, 260, 50),  
-    pygame.Rect(540, 350, 200, 50)  
+    pygame.Rect(560, 345, 260, 50)  
 ]
 
 username = ''
