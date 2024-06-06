@@ -44,6 +44,20 @@ def draw_grid(tiles, grid_size, tile_order):
 def is_solved(tile_order):
     return tile_order == list(range(len(tile_order)))
 
+def shuffle_tiles(tile_order, grid_size):
+    for _ in range(1000):
+        empty_index = get_empty_index(tile_order)
+        neighbors = []
+        if empty_index % grid_size > 0:
+            neighbors.append(empty_index - 1)
+        if empty_index % grid_size < grid_size - 1:
+            neighbors.append(empty_index + 1)
+        if empty_index // grid_size > 0:
+            neighbors.append(empty_index - grid_size)
+        if empty_index // grid_size < grid_size - 1:
+            neighbors.append(empty_index + grid_size)
+        swap(tile_order, empty_index, random.choice(neighbors))
+
 def easy_level():
     grid_size = 2
     # Update this path to the actual path where 'bull.jpg' is located
