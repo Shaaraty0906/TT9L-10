@@ -73,7 +73,7 @@ def options():
         SCREEN.fill("white")
 
         INSTRUCTION_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
-        OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
+        INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
         OPTIONS_BACK = Button(image=None, pos=(640, 460), 
