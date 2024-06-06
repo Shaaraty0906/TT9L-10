@@ -68,7 +68,7 @@ def play():
     
 def INSTRUCTION():
     while True:
-        OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
+        INSTRUCTION_MOUSE_POS = pygame.mouse.get_pos()
 
         SCREEN.fill("white")
 
