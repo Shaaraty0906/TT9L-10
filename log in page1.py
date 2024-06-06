@@ -25,7 +25,11 @@ input_boxes = [
     pygame.Rect(560, 345, 260, 50)  
 ]
 
-
+username = ''
+user_password = ''
+active_box = None
+mode = 'login'
+message = ''
 
 def draw_text(text, font, color, surface, x, y):
     textobj = font.render(text, True, color)
