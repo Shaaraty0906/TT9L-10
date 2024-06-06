@@ -97,6 +97,14 @@ def easy_level():
         minutes = int(seconds // 60)
         seconds = int(seconds % 60)
 
+        font = pygame.font.Font(None, 36)
+        timer_text = font.render(f"Time: {minutes:02}:{seconds:02}", True, (0, 0, 0))
+        screen.blit(timer_text, (10, 10))
+ 
+    
+
+        
+        
         if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
