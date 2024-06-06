@@ -100,12 +100,22 @@ def easy_level():
         font = pygame.font.Font(None, 36)
         timer_text = font.render(f"Time: {minutes:02}:{seconds:02}", True, (0, 0, 0))
         screen.blit(timer_text, (10, 10))
- 
     
-
+    # PAUSE BUTTON DISPLAY
+        mouse_pos = pygame.mouse.get_pos()
+        pause_button_color = PAUSE_BUTTON_COLOR if not PAUSE_BUTTON_RECT.collidepoint(mouse_pos) else PAUSE_BUTTON_HOVER_COLOR
+        pygame.draw.rect(screen, pause_button_color, PAUSE_BUTTON_RECT)
+        pause_text = font.render("Pause" if not paused else "Resume", True, (0, 0, 0))
+        screen.blit(pause_text, (PAUSE_BUTTON_RECT.x + 5, PAUSE_BUTTON_RECT.y + 5))      
+          
+          
+          
+          
+          
         
-        
-        if is_solved(tile_order):
+    
+      
+         if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
 
