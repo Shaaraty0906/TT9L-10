@@ -72,7 +72,7 @@ def INSTRUCTION():
 
         SCREEN.fill("white")
 
-        INSTRUCTION_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
+        INSTRUCTION_TEXT = get_font(45).render("Game instructions will appear here!", True, "Black")
         INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
 
