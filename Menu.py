@@ -80,14 +80,14 @@ def options():
                             text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
 
         INSTRUCTION_BACK.changeColor(INSTRUCTION_MOUSE_POS)
-        OPTIONS_BACK.update(SCREEN)
+        INSTRUCTION_BACK.update(SCREEN)
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if OPTIONS_BACK.checkForInput(OPTIONS_MOUSE_POS):
+                if INSTRUCTION_BACK.checkForInput(INSTRUCTION_MOUSE_POS):
                     main_menu()
 
         pygame.display.update()
