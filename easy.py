@@ -11,6 +11,9 @@ BACKGROUND_COLOR = (255, 255, 255)
 PAUSE_BUTTON_COLOR = (200, 200, 200)
 PAUSE_BUTTON_HOVER_COLOR = (170, 170, 170)
 PAUSE_BUTTON_RECT = pygame.Rect(500, 10, 80, 40)
+EXIT_BUTTON_COLOR = (255, 100, 100)
+EXIT_BUTTON_HOVER_COLOR = (255, 70, 70)
+EXIT_BUTTON_RECT = pygame.Rect(500, 60, 80, 40)
 
 def load_image(image_path, grid_size):
     image = pygame.image.load('bull.jpg')
