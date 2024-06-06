@@ -79,7 +79,7 @@ def options():
         INSTRUCTION_BACK = Button(image=None, pos=(640, 460), 
                             text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
 
-        OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
+        INSTRUCTION_BACK.changeColor(INSTRUCTION_MOUSE_POS)
         OPTIONS_BACK.update(SCREEN)
 
         for event in pygame.event.get():
