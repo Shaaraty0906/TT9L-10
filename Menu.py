@@ -46,7 +46,7 @@ def play():
 
         SCREEN.fill("black")
 
-        PLAY_TEXT = get_font(45).render("Game will start", True, "White")
+        PLAY_TEXT = get_font(45).render("Game will startc", True, "White")
         PLAY_RECT = PLAY_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(PLAY_TEXT, PLAY_RECT)
 
@@ -72,7 +72,7 @@ def options():
 
         SCREEN.fill("white")
 
-        OPTIONS_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
+        INSTRUCTION_TEXT = get_font(45).render("This is the OPTIONS screen.", True, "Black")
         OPTIONS_RECT = OPTIONS_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(OPTIONS_TEXT, OPTIONS_RECT)
 
