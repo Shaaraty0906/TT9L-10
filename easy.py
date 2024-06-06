@@ -101,6 +101,8 @@ pause_start_ticks = 0
         else:
             paused = True
             pause_start_ticks = pygame.time.get_ticks()
+        elif EXIT_BUTTON_RECT.collidepoint(event.pos):
+        running = False
 
         screen.fill(BACKGROUND_COLOR)
         draw_grid(tiles, grid_size, tile_order)
