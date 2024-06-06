@@ -7,27 +7,26 @@ pygame.init()
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu")
 BG = pygame.image.load("loginbackground2.jpg")
-BG = pygame.transform.scale(BG, (1280, 720))  # Scale the background image to fit the screen
+BG = pygame.transform.scale(BG, (1280, 720))  #the background image to fit the screen code
 
-# Colors
+# RGB colour values
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
 BLUE = (0, 0, 255)
 RED = (255, 0, 0)
 
-# Fonts
+# Fonts code
 font = pygame.font.Font(None, 74)
 input_font = pygame.font.Font(None, 50)
 button_font = pygame.font.Font(None, 60)
 
-# Input boxes
+# Input boxes for the typing
 input_boxes = [
-    pygame.Rect(540, 250, 200, 50),  # Username box
-    pygame.Rect(540, 350, 200, 50)  # Password box
+    pygame.Rect(560, 250, 260, 50),  
+    pygame.Rect(540, 350, 200, 50)  
 ]
 
-# Variables
 username = ''
 user_password = ''
 active_box = None
