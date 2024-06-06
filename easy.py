@@ -90,6 +90,15 @@ pause_start_ticks = 0
                 elif event.key == pygame.K_RIGHT and (empty_index % grid_size) > 0:
                     swap(tile_order, empty_index, empty_index - 1)
 
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+    if PAUSE_BUTTON_RECT.collidepoint(event.pos):
+        if paused:
+            paused = False
+            start_ticks += pygame.time.get_ticks() - pause_start_ticks
+        else:
+            paused = True
+            pause_start_ticks = pygame.time.get_ticks()
+
         screen.fill(BACKGROUND_COLOR)
         draw_grid(tiles, grid_size, tile_order)
         pygame.display.flip()
