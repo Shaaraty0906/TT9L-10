@@ -8,6 +8,9 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 #size and bg clour
 SCREEN_SIZE = 600
 BACKGROUND_COLOR = (255, 255, 255)
+PAUSE_BUTTON_COLOR = (200, 200, 200)
+PAUSE_BUTTON_HOVER_COLOR = (170, 170, 170)
+PAUSE_BUTTON_RECT = pygame.Rect(500, 10, 80, 40)
 
 def load_image(image_path, grid_size):
     image = pygame.image.load('bull.jpg')
