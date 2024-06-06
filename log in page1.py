@@ -75,7 +75,6 @@ def main():
         draw_text(username, input_font, BLACK, SCREEN, input_boxes[0].x+5, input_boxes[0].y+5)
         draw_text('*' * len(user_password), input_font, BLACK, SCREEN, input_boxes[1].x+5, input_boxes[1].y+5)
 
-        # Buttons
         login_button = pygame.Rect(500, 500, 150, 60)
         register_button = pygame.Rect(696, 500, 220, 60)
         pygame.draw.rect(SCREEN, WHITE, login_button)
@@ -83,8 +82,7 @@ def main():
         draw_text('LOGIN', button_font, BLACK, SCREEN, 510, 510)
         draw_text('REGISTER', button_font, BLACK, SCREEN, 700, 510)
 
-        # Display message
-        draw_text(message, input_font, RED, SCREEN, 540, 600)
+        
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
