@@ -76,7 +76,7 @@ def options():
         INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, 260))
         SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
 
-        OPTIONS_BACK = Button(image=None, pos=(640, 460), 
+        INSTRUCTION_BACK = Button(image=None, pos=(640, 460), 
                             text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
 
         OPTIONS_BACK.changeColor(OPTIONS_MOUSE_POS)
