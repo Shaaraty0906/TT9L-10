@@ -66,7 +66,7 @@ def play():
 
         pygame.display.update()
     
-def options():
+def INSTRUCTION():
     while True:
         OPTIONS_MOUSE_POS = pygame.mouse.get_pos()
 
