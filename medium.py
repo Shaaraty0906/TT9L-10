@@ -148,6 +148,7 @@ def medium_level():
     color_active = pygame.Color('lightskyblue3')
     color_inactive = pygame.Color('dodgerblue2')
     color = color_inactive
+    active = False
     pygame.quit()
 
 if __name__ == '__main__':
