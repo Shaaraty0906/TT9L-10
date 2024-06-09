@@ -147,6 +147,7 @@ def medium_level():
     input_box_color = (0, 0, 0)
     color_active = pygame.Color('lightskyblue3')
     color_inactive = pygame.Color('dodgerblue2')
+    color = color_inactive
     pygame.quit()
 
 if __name__ == '__main__':
