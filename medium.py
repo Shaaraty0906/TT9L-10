@@ -144,6 +144,7 @@ def medium_level():
     guessing = True
     user_guess = ""
     input_box = pygame.React(SCREEN_SIZE // 2 - 100, SCREEN_SIZE // 2,200,50)
+    input_box_color = (0, 0, 0)
     pygame.quit()
 
 if __name__ == '__main__':
