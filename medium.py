@@ -140,6 +140,9 @@ def medium_level():
 
         pygame.display.flip()
 
+    #ANSWER
+    guessing = True
+    user_guess = ""
     pygame.quit()
 
 if __name__ == '__main__':
