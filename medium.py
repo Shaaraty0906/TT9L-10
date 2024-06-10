@@ -155,6 +155,9 @@ def medium_level():
             if event.type == pygame.Quit:
                 guessing = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
+                if input_box.collidepoint(event.pos):
+                    active = not active
+                
               
     pygame.quit()
 
