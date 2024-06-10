@@ -42,3 +42,6 @@ def draw_grid(screen, tiles, grid_size, tile_order):
             tile_index = tile_order[index]
             if tile_index != len(tile_order) - 1:
                 screen.blit(tiles[tile_index], (j * tile_width, i * tile_height))
+
+def is_solved(tile_order):
+    return tile_order == list(range(len(tile_order)))
