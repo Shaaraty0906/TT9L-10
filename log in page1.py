@@ -16,17 +16,14 @@ pygame.display.set_caption("Menu")
 BG = pygame.image.load("loginbackground2.jpg")
 BG = pygame.transform.scale(BG, (1280, 720))  # Scale the background image to fit the screen
 
-# Define colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
 
-# Define fonts
 font = pygame.font.Font(None, 74)
 input_font = pygame.font.Font(None, 50)
 button_font = pygame.font.Font(None, 60)
 
-# Define input boxes
 input_boxes = [
     pygame.Rect(560, 250, 260, 50),
     pygame.Rect(560, 345, 260, 50)
@@ -75,7 +72,7 @@ def register(user, pwd):
         file.write(f"\n{user},{pwd}")
     message = "You have been registered!"
     messagebox.showinfo("Register", message)
-    state = 'login'  # Return to login state after registration
+    state = 'login'  
 
 def login_page():
     global username, user_password, active_box, message, state
