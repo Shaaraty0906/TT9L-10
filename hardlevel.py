@@ -67,3 +67,7 @@ def easy_level(screen):
     tile_order = list(range(len(tiles)))
     shuffle_tiles(tile_order, grid_size)
 
+    start_ticks = pygame.time.get_ticks()
+    paused = False
+    pause_start_ticks = 0
+
