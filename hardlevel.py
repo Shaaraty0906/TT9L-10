@@ -61,4 +61,5 @@ def shuffle_tiles(tile_order, grid_size):
         swap(tile_order, empty_index, random.choice(neighbors))
 
 def easy_level(screen):
-    
+    grid_size = 4
+
