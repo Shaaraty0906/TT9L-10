@@ -18,3 +18,6 @@ def load_image(image_path, grid_size):
     image = pygame.image.load(image_path)
     image = pygame.transform.scale(image, (SCREEN_SIZE, SCREEN_SIZE))
     tiles = []
+    tile_width = SCREEN_SIZE // grid_size
+    tile_height = SCREEN_SIZE // grid_size
+    for i in range(grid_size):
