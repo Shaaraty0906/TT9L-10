@@ -120,4 +120,8 @@ def easy_level(screen):
             minutes = int(seconds // 60)
             seconds = int(seconds % 60)
 
+        font = pygame.font.Font(None, 36)
+        timer_text = font.render(f"Time: {minutes:02}:{seconds:02}", True, (0, 0, 0))
+        screen.blit(timer_text, (10, 10))
+
 
