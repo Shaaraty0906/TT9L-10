@@ -152,7 +152,9 @@ def medium_level():
 
     while guessing:
         for event in pygame.event.get():
-            
+            if event.type == pygame.Quit:
+                guessing = False
+              
     pygame.quit()
 
 if __name__ == '__main__':
