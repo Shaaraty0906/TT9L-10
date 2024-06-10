@@ -112,6 +112,13 @@ def easy_level(screen):
                     swap(tile_order, dragged_tile_index, empty_index)
                 dragged_tile_index = -1
 
-            screen.fill(BACKGROUND_COLOR)
+        screen.fill(BACKGROUND_COLOR)
         draw_grid(screen, tiles, grid_size, tile_order)
+
+        if not paused:
+            # Calculate the elapsed time
+            seconds = (pygame.time.get_ticks() - start_ticks) / 1000
+            minutes = int(seconds // 60)
+            seconds = int(seconds % 60)
+
 
