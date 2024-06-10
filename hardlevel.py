@@ -26,3 +26,6 @@ def load_image(image_path, grid_size):
             tile_image = image.subsurface(rect).copy()
             tiles.append(tile_image)
     return tiles
+
+def get_empty_index(tile_order):
+    return tile_order.index(len(tile_order) - 1)
