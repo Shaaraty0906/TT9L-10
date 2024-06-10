@@ -40,3 +40,5 @@ def draw_grid(screen, tiles, grid_size, tile_order):
         for j in range(grid_size):
             index = i * grid_size + j
             tile_index = tile_order[index]
+            if tile_index != len(tile_order) - 1:
+                screen.blit(tiles[tile_index], (j * tile_width, i * tile_height))
