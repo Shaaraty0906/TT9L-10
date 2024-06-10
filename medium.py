@@ -165,7 +165,11 @@ def medium_level():
                      if event.key == pygame.K_RETURN:
                          if user_guess.lower() == "tiger":
                              display_message("Correct! It's a tiger!")
-                        
+                         else :
+                             display_message("Incorrect! Try again.")
+                             
+                             
+                         
               
     pygame.quit()
 
