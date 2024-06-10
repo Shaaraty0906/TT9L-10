@@ -45,3 +45,6 @@ def draw_grid(screen, tiles, grid_size, tile_order):
 
 def is_solved(tile_order):
     return tile_order == list(range(len(tile_order)))
+
+def shuffle_tiles(tile_order, grid_size):
+    for _ in range(1000):
