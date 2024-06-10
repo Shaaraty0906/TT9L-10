@@ -160,6 +160,12 @@ def medium_level():
                 else:
                     active = False
                 color = color_active if active else color_inactive
+            elif event.type == pygame.KEYDOWN:
+                 if active:
+                     if event.key == pygame.K_RETURN:
+                         if user_guess.lower() == "tiger":
+                             display_message("Correct! It's a tiger!")
+                        
               
     pygame.quit()
 
