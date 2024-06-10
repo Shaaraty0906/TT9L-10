@@ -175,7 +175,7 @@ def medium_level():
                          user_guess += event.unicode
 
         screen.fill(BACKGROUND_COLOR)
-                         
+        prompt_text = FONT.render("Guess the animal in the picture:", True, (0, 0, 0))                 
 
                              
                          
