@@ -142,5 +142,10 @@ def easy_level(screen):
             running = False
         pygame.quit()
 
+if __name__ == '__main__':
+    pygame.init()
+    screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
+    pygame.display.set_caption("Sliding Puzzle")
+    easy_level(screen)
 
 
