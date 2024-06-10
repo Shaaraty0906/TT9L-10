@@ -143,7 +143,7 @@ def medium_level():
     #ANSWER
     guessing = True
     user_guess = ""
-    input_box = pygame.React(SCREEN_SIZE // 2 - 100, SCREEN_SIZE // 2,200,50)
+    input_box = pygame.Rect(SCREEN_SIZE // 2 - 100, SCREEN_SIZE // 2,200,50)
     input_box_color = (0, 0, 0)
     color_active = pygame.Color('lightskyblue3')
     color_inactive = pygame.Color('dodgerblue2')
@@ -152,7 +152,7 @@ def medium_level():
 
     while guessing:
         for event in pygame.event.get():
-            if event.type == pygame.Quit:
+            if event.type == pygame.QUIT:
                 guessing = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if input_box.collidepoint(event.pos):
