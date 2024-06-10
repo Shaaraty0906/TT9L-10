@@ -169,6 +169,8 @@ def medium_level():
                              display_message("Incorrect! Try again.")
                          pygame.time.delay(2000)
                          guessing = False
+                     elif event.key == pygame.K_BACKSPACE:
+                         user_guess = user_guess[:-1]
 
                              
                          
