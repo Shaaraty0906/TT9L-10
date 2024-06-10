@@ -157,6 +157,8 @@ def medium_level():
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if input_box.collidepoint(event.pos):
                     active = not active
+                else:
+                    active = False
                 
               
     pygame.quit()
