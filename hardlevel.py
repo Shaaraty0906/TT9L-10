@@ -8,3 +8,4 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 # Size and background color
 SCREEN_SIZE = 600
 BACKGROUND_COLOR = (255, 255, 255)
+PAUSE_BUTTON_COLOR = (200, 200, 200)
