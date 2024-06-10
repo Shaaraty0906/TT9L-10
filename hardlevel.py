@@ -29,3 +29,6 @@ def load_image(image_path, grid_size):
 
 def get_empty_index(tile_order):
     return tile_order.index(len(tile_order) - 1)
+
+def swap(tile_order, index1, index2):
+    tile_order[index1], tile_order[index2] = tile_order[index2], tile_order[index1]
