@@ -112,3 +112,6 @@ def easy_level(screen):
                     swap(tile_order, dragged_tile_index, empty_index)
                 dragged_tile_index = -1
 
+            screen.fill(BACKGROUND_COLOR)
+        draw_grid(screen, tiles, grid_size, tile_order)
+
