@@ -62,4 +62,5 @@ def shuffle_tiles(tile_order, grid_size):
 
 def easy_level(screen):
     grid_size = 4
+    image_path = 'dog.jpg'
 
