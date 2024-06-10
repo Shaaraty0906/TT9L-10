@@ -74,3 +74,41 @@ def easy_level(screen):
     dragging = False
     dragged_tile_index = -1
 
+        running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+                if PAUSE_BUTTON_RECT.collidepoint(mouse_pos):
+                    if paused:
+                        paused = False
+                        start_ticks += pygame.time.get_ticks() - pause_start_ticks
+                    else:
+                        paused = True
+                        pause_start_ticks = pygame.time.get_ticks()
+                elif EXIT_BUTTON_RECT.collidepoint(mouse_pos):
+                    running = False
+                elif not paused:
+                    tile_width = SCREEN_SIZE // grid_size
+                    tile_height = SCREEN_SIZE // grid_size
+                    for i in range(grid_size):
+                        for j in range(grid_size):
+                            rect = pygame.Rect(j * tile_width, i * tile_height, tile_width, tile_height)
+                            if rect.collidepoint(mouse_pos):
+                                dragged_tile_index = i * grid_size + j
+                                if tile_order[dragged_tile_index] != len(tile_order) - 1:  # Don't drag the empty tile
+                                    dragging = True
+                                break
+            elif event.type == pygame.MOUSEBUTTONUP and dragging:
+                dragging = False
+                tile_width = SCREEN_SIZE // grid_size
+                tile_height = SCREEN_SIZE // grid_size
+                mouse_pos = event.pos
+                empty_index = get_empty_index(tile_order)
+                empty_rect = pygame.Rect((empty_index % grid_size) * tile_width, (empty_index // grid_size) * tile_height, tile_width, tile_height)
+                if empty_rect.collidepoint(mouse_pos):
+                    swap(tile_order, dragged_tile_index, empty_index)
+                dragged_tile_index = -1
+
