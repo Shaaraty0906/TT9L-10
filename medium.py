@@ -173,6 +173,8 @@ def medium_level():
                          user_guess = user_guess[:-1]
                      else :
                          user_guess += event.unicode
+
+        screen.fill(BACKGROUND_COLOR)
                          
 
                              
