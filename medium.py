@@ -149,6 +149,10 @@ def medium_level():
     color_inactive = pygame.Color('dodgerblue2')
     color = color_inactive
     active = False
+
+    while guessing:
+        for event in pygame.event.get():
+            
     pygame.quit()
 
 if __name__ == '__main__':
