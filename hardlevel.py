@@ -71,3 +71,6 @@ def easy_level(screen):
     paused = False
     pause_start_ticks = 0
 
+    dragging = False
+    dragged_tile_index = -1
+
