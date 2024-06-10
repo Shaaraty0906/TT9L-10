@@ -171,6 +171,9 @@ def medium_level():
                          guessing = False
                      elif event.key == pygame.K_BACKSPACE:
                          user_guess = user_guess[:-1]
+                     else :
+                         user_guess += event.unicode
+                         
 
                              
                          
