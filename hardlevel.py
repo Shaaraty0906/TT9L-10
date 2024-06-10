@@ -135,5 +135,11 @@ def easy_level(screen):
         exit_text = font.render("Exit", True, (0, 0, 0))
         screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
 
+        pygame.display.flip()
+
+        if is_solved(tile_order):
+            print("Puzzle Solved!")
+            running = False
+
 
 
