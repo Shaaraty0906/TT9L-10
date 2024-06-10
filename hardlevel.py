@@ -36,3 +36,7 @@ def swap(tile_order, index1, index2):
 def draw_grid(screen, tiles, grid_size, tile_order):
     tile_width = SCREEN_SIZE // grid_size
     tile_height = SCREEN_SIZE // grid_size
+    for i in range(grid_size):
+        for j in range(grid_size):
+            index = i * grid_size + j
+            tile_index = tile_order[index]
