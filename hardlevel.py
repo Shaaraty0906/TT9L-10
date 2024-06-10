@@ -116,7 +116,6 @@ def easy_level(screen):
         draw_grid(screen, tiles, grid_size, tile_order)
 
         if not paused:
-            # Calculate the elapsed time
             seconds = (pygame.time.get_ticks() - start_ticks) / 1000
             minutes = int(seconds // 60)
             seconds = int(seconds % 60)
