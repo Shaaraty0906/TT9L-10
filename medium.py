@@ -177,7 +177,8 @@ def medium_level():
         screen.fill(BACKGROUND_COLOR)
         prompt_text = FONT.render("Guess the animal in the picture:", True, (0, 0, 0))  
         pygame.draw.rect(screen, color, input_box, 2)
-        user_input_text = FONT.render(user_guess, True, (0, 0, 0))               
+        user_input_text = FONT.render(user_guess, True, (0, 0, 0))
+        screen.blit(prompt_text, (SCREEN_SIZE // 2 - prompt_text.get_width() // 2, SCREEN_SIZE // 2 - 50))               
 
                              
                          
