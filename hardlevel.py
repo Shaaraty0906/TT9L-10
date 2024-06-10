@@ -12,3 +12,9 @@ PAUSE_BUTTON_COLOR = (200, 200, 200)
 PAUSE_BUTTON_HOVER_COLOR = (170, 170, 170)
 EXIT_BUTTON_COLOR = (255, 100, 100)
 EXIT_BUTTON_HOVER_COLOR = (255, 70, 70)
+PAUSE_BUTTON_RECT = pygame.Rect(500, 10, 80, 40)
+
+def load_image(image_path, grid_size):
+    image = pygame.image.load(image_path)
+    image = pygame.transform.scale(image, (SCREEN_SIZE, SCREEN_SIZE))
+    tiles = []
