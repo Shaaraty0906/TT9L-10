@@ -140,6 +140,7 @@ def easy_level(screen):
         if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
+        pygame.quit()
 
 
 
