@@ -65,4 +65,5 @@ def easy_level(screen):
     image_path = 'dog.jpg'
     tiles = load_image(image_path, grid_size)
     tile_order = list(range(len(tiles)))
+    shuffle_tiles(tile_order, grid_size)
 
