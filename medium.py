@@ -180,7 +180,7 @@ def medium_level():
         user_input_text = FONT.render(user_guess, True, (0, 0, 0))
         screen.blit(prompt_text, (SCREEN_SIZE // 2 - prompt_text.get_width() // 2, SCREEN_SIZE // 2 - 50))               
         screen.blit(user_input_text, (input_box.x + 5, input_box.y + 5))
-        
+        input_box.w = max(200, user_input_text.get_width() + 10)
                              
                          
     pygame.quit()
