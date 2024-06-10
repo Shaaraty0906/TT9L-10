@@ -167,10 +167,11 @@ def medium_level():
                              display_message("Correct! It's a tiger!")
                          else :
                              display_message("Incorrect! Try again.")
-                             
+                         pygame.time.delay(2000)
+                         guessing = False
+
                              
                          
-              
     pygame.quit()
 
 if __name__ == '__main__':
