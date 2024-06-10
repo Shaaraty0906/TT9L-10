@@ -154,6 +154,7 @@ def medium_level():
         for event in pygame.event.get():
             if event.type == pygame.Quit:
                 guessing = False
+            elif event.type == pygame.MOUSEBUTTONDOWN:
               
     pygame.quit()
 
