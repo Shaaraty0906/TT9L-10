@@ -159,7 +159,7 @@ def medium_level():
                     active = not active
                 else:
                     active = False
-                
+                color = color_active if active else color_inactive
               
     pygame.quit()
 
