@@ -3,7 +3,7 @@ import pygame, sys
 pygame.init()
 
 SCREEN = pygame.display.set_mode((1280, 720))
-pygame.display.set_caption("Menu")
+pygame.display.set_caption("Menu page")
 
 BG = pygame.image.load("mainbackground2.jpg")
 

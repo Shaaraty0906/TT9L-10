@@ -2,10 +2,8 @@ import os
 import pygame
 import random
 
-# Directory path
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-# Size and background color
 SCREEN_SIZE = 600
 BACKGROUND_COLOR = (255, 255, 255)
 PAUSE_BUTTON_COLOR = (200, 200, 200)
@@ -13,6 +11,7 @@ PAUSE_BUTTON_HOVER_COLOR = (170, 170, 170)
 EXIT_BUTTON_COLOR = (255, 100, 100)
 EXIT_BUTTON_HOVER_COLOR = (255, 70, 70)
 PAUSE_BUTTON_RECT = pygame.Rect(500, 10, 80, 40)
+EXIT_BUTTON_RECT = pygame.Rect(500, 60, 80, 40)
 
 def load_image(image_path, grid_size):
     image = pygame.image.load(image_path)
@@ -74,7 +73,7 @@ def easy_level(screen):
     dragging = False
     dragged_tile_index = -1
 
-        running = True
+    running = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -98,7 +97,7 @@ def easy_level(screen):
                             rect = pygame.Rect(j * tile_width, i * tile_height, tile_width, tile_height)
                             if rect.collidepoint(mouse_pos):
                                 dragged_tile_index = i * grid_size + j
-                                if tile_order[dragged_tile_index] != len(tile_order) - 1:  # Don't drag the empty tile
+                                if tile_order[dragged_tile_index] != len(tile_order) - 1:
                                     dragging = True
                                 break
             elif event.type == pygame.MOUSEBUTTONUP and dragging:
@@ -114,12 +113,12 @@ def easy_level(screen):
 
         screen.fill(BACKGROUND_COLOR)
         draw_grid(screen, tiles, grid_size, tile_order)
-
+        
         if not paused:
             seconds = (pygame.time.get_ticks() - start_ticks) / 1000
             minutes = int(seconds // 60)
             seconds = int(seconds % 60)
-
+        
         font = pygame.font.Font(None, 36)
         timer_text = font.render(f"Time: {minutes:02}:{seconds:02}", True, (0, 0, 0))
         screen.blit(timer_text, (10, 10))
@@ -140,12 +139,11 @@ def easy_level(screen):
         if is_solved(tile_order):
             print("Puzzle Solved!")
             running = False
-        pygame.quit()
+pygame.quit()
 
 if __name__ == '__main__':
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
     pygame.display.set_caption("Sliding Puzzle")
     easy_level(screen)
-
-
+    
