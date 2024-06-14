@@ -105,11 +105,11 @@ while running:
         screen.fill(BACKGROUND_COLOR)
         draw_grid(tiles, grid_size, tile_order)
         
-
-    # CALCULATION FOR TIMER
-        seconds = (pygame.time.get_ticks() - start_ticks) / 1000
-        minutes = int(seconds // 60)
-        seconds = int(seconds % 60)
+        if not paused
+             # CALCULATION FOR TIMER
+             seconds = (pygame.time.get_ticks() - start_ticks) / 1000
+             minutes = int(seconds // 60)
+             seconds = int(seconds % 60)
 
         font = pygame.font.Font(None, 36)
         timer_text = font.render(f"Time: {minutes:02}:{seconds:02}", True, (0, 0, 0))
