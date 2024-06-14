@@ -105,7 +105,7 @@ def easy_level():
         screen.fill(BACKGROUND_COLOR)
         draw_grid(tiles, grid_size, tile_order)
         
-        if not paused
+        if not paused:
              # CALCULATION FOR TIMER
              seconds = (pygame.time.get_ticks() - start_ticks) / 1000
              minutes = int(seconds // 60)
