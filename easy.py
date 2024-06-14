@@ -117,7 +117,7 @@ def easy_level():
     
     # PAUSE BUTTON DISPLAY
         mouse_pos = pygame.mouse.get_pos()
-        pause_button_color = PAUSE_BUTTON_COLOR if not PAUSE_BUTTON_RECT.collidepoint(mouse_pos) else PAUSE_BUTTON_
+        pause_button_color = PAUSE_BUTTON_COLOR if not PAUSE_BUTTON_RECT.collidepoint(mouse_pos) else PAUSE_BUTTON_HOVER_COLOR
         pygame.draw.rect(screen, pause_button_color, PAUSE_BUTTON_RECT)
         pause_text = font.render("Pause" if not paused else "Resume", True, (0, 0, 0))
         screen.blit(pause_text, (PAUSE_BUTTON_RECT.x + 5, PAUSE_BUTTON_RECT.y + 5))      
