@@ -124,7 +124,7 @@ def easy_level():
 
     #Exit button display
 
-        exit_button_color = EXIT_BUTTON_COLOR if not EXIT_BUTTON_RECT.collidepoint(mouse_pos) else EXIT_BUTTON_HOVER_
+        exit_button_color = EXIT_BUTTON_COLOR if not EXIT_BUTTON_RECT.collidepoint(mouse_pos) else EXIT_BUTTON_HOVER_COLOR
         pygame.draw.rect(screen, exit_button_color, EXIT_BUTTON_RECT)
         exit_text = font.render("Exit", True, (0, 0, 0))
         screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
