@@ -70,10 +70,10 @@ def easy_level():
     shuffle_tiles(tile_order, grid_size)
     
 
-#TIMER
-start_ticks = pygame.time.get_ticks()
-paused = False
-pause_start_ticks = 0
+    #TIMER
+       start_ticks = pygame.time.get_ticks()
+       paused = False
+        pause_start_ticks = 0
 
 running = True
 while running:
