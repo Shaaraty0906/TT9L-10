@@ -67,10 +67,8 @@ def easy_level():
     image_path = 'bull.jpg'
     tiles = load_image(image_path, grid_size)
     tile_order = list(range(len(tiles)))
-    random.shuffle(tile_order)
+    shuffle_tiles(tile_order, grid_size)
     
-    empty_tile = tile_order.index(len(tiles) - 1)
-    tile_order[empty_tile], tile_order[-1] = tile_order[-1], tile_order[empty_tile]
 
 #TIMER
 start_ticks = pygame.time.get_ticks()
@@ -144,3 +142,124 @@ if __name__ == '__main__':
     screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
     pygame.display.set_caption("Sliding Puzzle")
     easy_level()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
