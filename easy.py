@@ -80,7 +80,7 @@ def easy_level():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.KEYDOWN and not paused
+            elif event.type == pygame.KEYDOWN and not paused:
                 empty_index = get_empty_index(tile_order)
                 if event.key == pygame.K_UP and empty_index + grid_size < len(tile_order):
                     swap(tile_order, empty_index, empty_index + grid_size)
