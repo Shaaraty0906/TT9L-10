@@ -75,8 +75,8 @@ def easy_level():
        paused = False
         pause_start_ticks = 0
 
-running = True
-while running:
+    running = True
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
