@@ -131,7 +131,7 @@ def easy_level():
           
         pygame.display.flip()     
           
-if is_solved(tile_order):
+    if is_solved(tile_order):
         print("Puzzle Solved!")
         running = False
 
