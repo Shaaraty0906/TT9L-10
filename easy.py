@@ -80,7 +80,7 @@ while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            elif event.type == pygame.KEYDOWN:
+            elif event.type == pygame.KEYDOWN and not paused
                 empty_index = get_empty_index(tile_order)
                 if event.key == pygame.K_UP and empty_index + grid_size < len(tile_order):
                     swap(tile_order, empty_index, empty_index + grid_size)
@@ -129,7 +129,7 @@ while running:
         exit_text = font.render("Exit", True, (0, 0, 0))
         screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
           
-     pygame.display.flip()     
+        pygame.display.flip()     
           
     if is_solved(tile_order):
         print("Puzzle Solved!")
