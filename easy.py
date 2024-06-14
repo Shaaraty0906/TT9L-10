@@ -104,7 +104,7 @@ while running:
 
         screen.fill(BACKGROUND_COLOR)
         draw_grid(tiles, grid_size, tile_order)
-        pygame.display.flip()
+        
 
     # CALCULATION FOR TIMER
         seconds = (pygame.time.get_ticks() - start_ticks) / 1000
@@ -129,7 +129,7 @@ while running:
         exit_text = font.render("Exit", True, (0, 0, 0))
         screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
           
-          
+     pygame.display.flip()     
           
     if is_solved(tile_order):
         print("Puzzle Solved!")
