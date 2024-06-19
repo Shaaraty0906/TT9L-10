@@ -8,7 +8,7 @@ pygame.display.set_caption("Menu page")
 BG = pygame.image.load("mainbackground2.jpg")
 
 def get_font(size):
-    return pygame.font.Font("assets/font.ttf", size)
+    return pygame.font.Font(None, size)
 
 class Button():
 	def __init__(self, image, pos, text_input, font, base_color, hovering_color):
