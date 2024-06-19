@@ -5,12 +5,10 @@ pygame.init()
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu page")
 
-# Load background image
-MAIN_MENU_BG = pygame.image.load("mainbackground2.jpg")
-MAIN_MENU_BG = pygame.transform.scale(MAIN_MENU_BG, (1280, 720))
+BG = pygame.image.load("mainbackground2.jpg")
 
 def get_font(size):
-    return pygame.font.Font(None, size)
+    return pygame.font.Font("assets/font.ttf", size)
 
 class Button():
 	def __init__(self, image, pos, text_input, font, base_color, hovering_color):
@@ -35,7 +33,13 @@ class Button():
 		if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
 			return True
 		return False
-     
+
+	def changeColor(self, position):
+		if position[0] in range(self.rect.left, self.rect.right) and position[1] in range(self.rect.top, self.rect.bottom):
+			self.text = self.font.render(self.text_input, True, self.hovering_color)
+		else:
+			self.text = self.font.render(self.text_input, True, self.base_color)
+
 def play():
     while True:
         PLAY_MOUSE_POS = pygame.mouse.get_pos()
