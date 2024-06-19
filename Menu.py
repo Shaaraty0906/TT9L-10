@@ -5,7 +5,9 @@ pygame.init()
 SCREEN = pygame.display.set_mode((1280, 720))
 pygame.display.set_caption("Menu page")
 
-BG = pygame.image.load("mainbackground2.jpg")
+# Load background image
+MAIN_MENU_BG = pygame.image.load("mainbackground2.jpg")
+MAIN_MENU_BG = pygame.transform.scale(MAIN_MENU_BG, (1280, 720))
 
 def get_font(size):
     return pygame.font.Font(None, size)
