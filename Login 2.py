@@ -97,7 +97,7 @@ def login_page():
         screen.blit(font.render("Login", True, BLACK), (login_button.x + 15, login_button.y + 10))
         screen.blit(font.render("Register", True, BLACK), (register_button.x + 15, register_button.y + 10))
 
-         screen.blit(font.render("Username:", True, BLACK), (username_box.rect.x - 150, username_box.rect.y + 5))
+        screen.blit(font.render("Username:", True, BLACK), (username_box.rect.x - 150, username_box.rect.y + 5))
         screen.blit(font.render("Password:", True, BLACK), (password_box.rect.x - 150, password_box.rect.y + 5))
 
         draw_message(screen, message)
@@ -106,3 +106,12 @@ def login_page():
             return 'main_menu'
         
         pygame.display.flip()
+
+def register_page():
+    username_box = InputBox(300, 200, 200, 40)
+    password_box = InputBox(300, 300, 200, 40)
+    boxes = [username_box, password_box]
+
+    register_button = pygame.Rect(350, 400, 100, 50)
+    back_button = pygame.Rect(600, 500, 150, 50)
+    message = ""
