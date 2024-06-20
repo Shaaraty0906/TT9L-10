@@ -26,3 +26,10 @@ class Leaderboard:
     def save(self, filename='leaderboard.json'):
         with open(filename, 'w') as f:
             json.dump(self.player_times, f, indent=4)
+
+    def load(self, filename='leaderboard.json'):
+        try:
+            with open(filename, 'r') as f:
+                self.player_times = json.load(f)
+        except FileNotFoundError:
+            pass        
