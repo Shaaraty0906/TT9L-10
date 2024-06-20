@@ -149,3 +149,14 @@ def register_page():
 
         draw_message(screen, message)
         pygame.display.flip()
+
+def main_menu():
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+        
+        screen.fill(WHITE)
+        screen.blit(font.render("Main Menu", True, BLACK), (width // 2 - 100, height // 2))
+        pygame.display.flip()        
