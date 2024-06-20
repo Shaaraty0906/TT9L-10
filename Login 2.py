@@ -57,3 +57,13 @@ def write_to_database(username, password):
 def draw_message(screen, message):
     msg_surface = font.render(message, True, BLACK)
     screen.blit(msg_surface, (width//2 - msg_surface.get_width()//2, height//2 - 30))
+
+def login_page():
+    username_box = InputBox(300, 200, 200, 40)
+    password_box = InputBox(300, 300, 200, 40)
+    boxes = [username_box, password_box]
+
+    login_button = pygame.Rect(350, 400, 100, 50)
+    register_button = pygame.Rect(600, 500, 150, 50)
+    message = ""
+    login_success_time = None  
