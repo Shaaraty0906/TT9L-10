@@ -87,3 +87,5 @@ class Game:
 
             self.display_leaderboard()
             pygame.display.update()
+
+        pygame.quit()
