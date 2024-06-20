@@ -14,3 +14,6 @@ BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
 
 font = pygame.font.Font(None, 36)
+
+background_image = pygame.image.load('background.jpg')
+background_image = pygame.transform.scale(background_image, (width, height))
