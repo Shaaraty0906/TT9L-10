@@ -15,5 +15,5 @@ GRAY = (200, 200, 200)
 
 font = pygame.font.Font(None, 36)
 
-background_image = pygame.image.load('background.jpg')
+background_image = pygame.image.load("loginbackground2.jpg")
 background_image = pygame.transform.scale(background_image, (width, height))
