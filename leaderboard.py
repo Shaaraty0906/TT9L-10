@@ -53,3 +53,20 @@ class Game:
         column_width = 200
 
         self.screen.fill(WHITE)   
+
+        header = font.render("Player", True, BLACK)
+        self.screen.blit(header, (50, 20))
+        for i, level in enumerate(["Level 1", "Level 2", "Level 3"], start=1):
+            header = font.render(level, True, BLACK)
+            self.screen.blit(header, (50 + i * column_width, 20))
+
+        for player, times in self.leaderboard.player_times.items():
+            player_label = font.render(player, True, BLACK)
+            self.screen.blit(player_label, (50, y_offset))
+
+            for i, level in enumerate(["level1", "level2", "level3"], start=1):
+                time_text = self.format_time(times[level])
+                time_label = font.render(time_text, True, BLACK)
+                self.screen.blit(time_label, (50 + i * column_width, y_offset))
+
+            y_offset += line_height
