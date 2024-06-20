@@ -160,3 +160,12 @@ def main_menu():
         screen.fill(WHITE)
         screen.blit(font.render("Main Menu", True, BLACK), (width // 2 - 100, height // 2))
         pygame.display.flip()        
+
+current_page = 'login'
+while True:
+    if current_page == 'login':
+        current_page = login_page()
+    elif current_page == 'register':
+        current_page = register_page()
+    elif current_page == 'main_menu':
+        main_menu()
