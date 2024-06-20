@@ -40,3 +40,16 @@ class Game:
         pygame.display.set_caption('Leaderboard')
         self.leaderboard = Leaderboard()
         self.leaderboard.load()               
+
+    def format_time(self, seconds):
+        minutes = int(seconds) // 60
+        seconds = int(seconds) % 60
+        return f"{minutes:02d} minutes {seconds:02d} seconds"
+
+    def display_leaderboard(self):
+        font = pygame.font.Font(None, 24)  # Decreased font size
+        y_offset = 50
+        line_height = 30
+        column_width = 200
+
+        self.screen.fill(WHITE)   
