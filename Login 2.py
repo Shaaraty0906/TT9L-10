@@ -1,7 +1,7 @@
 import pygame
 import sys
 
-pygame.init() 
+pygame.init()
 
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
@@ -39,7 +39,7 @@ class InputBox:
                     self.text = self.text[:-1]
                 else:
                     self.text += event.unicode
-                self.txt_surface = font.render(self.text, True, BLACK)   
+                self.txt_surface = font.render(self.text, True, BLACK)
 
     def draw(self, screen):
         screen.blit(self.txt_surface, (self.rect.x + 5, self.rect.y + 5))
@@ -159,8 +159,13 @@ def main_menu():
         
         screen.fill(WHITE)
         screen.blit(font.render("Main Menu", True, BLACK), (width // 2 - 100, height // 2))
-        pygame.display.flip()        
+        pygame.display.flip()
 
+        # Assuming some condition to return to another page or quit
+        # For example, return 'login' to go back to the login page
+        return 'login'
+
+# Initialize starting page
 current_page = 'login'
 while True:
     if current_page == 'login':
@@ -168,4 +173,4 @@ while True:
     elif current_page == 'register':
         current_page = register_page()
     elif current_page == 'main_menu':
-        main_menu()
+        current_page = main_menu()
