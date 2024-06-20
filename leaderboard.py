@@ -22,3 +22,7 @@ class Leaderboard:
         end_time = time.time()
         time_taken = end_time - start_time
         self.player_times[player_name][level] = time_taken
+
+    def save(self, filename='leaderboard.json'):
+        with open(filename, 'w') as f:
+            json.dump(self.player_times, f, indent=4)
