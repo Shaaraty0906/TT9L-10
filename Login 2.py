@@ -96,3 +96,6 @@ def login_page():
         pygame.draw.rect(screen, GRAY, register_button)
         screen.blit(font.render("Login", True, BLACK), (login_button.x + 15, login_button.y + 10))
         screen.blit(font.render("Register", True, BLACK), (register_button.x + 15, register_button.y + 10))
+
+         screen.blit(font.render("Username:", True, BLACK), (username_box.rect.x - 150, username_box.rect.y + 5))
+        screen.blit(font.render("Password:", True, BLACK), (password_box.rect.x - 150, password_box.rect.y + 5))
