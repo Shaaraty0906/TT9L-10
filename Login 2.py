@@ -67,3 +67,32 @@ def login_page():
     register_button = pygame.Rect(600, 500, 150, 50)
     message = ""
     login_success_time = None  
+
+    while True:
+        current_time = pygame.time.get_ticks()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            for box in boxes:
+                box.handle_event(event)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if login_button.collidepoint(event.pos):
+                    username = username_box.text
+                    password = password_box.text
+                    database = read_database()
+                    if username in database and database[username] == password:
+                        message = "Login successful!"
+                        login_success_time = current_time
+                    else:
+                        message = "Wrong username or password!"
+                if register_button.collidepoint(event.pos):
+                    return 'register'
+
+        screen.blit(background_image, (0, 0))
+        for box in boxes:
+            box.draw(screen)
+        pygame.draw.rect(screen, GRAY, login_button)
+        pygame.draw.rect(screen, GRAY, register_button)
+        screen.blit(font.render("Login", True, BLACK), (login_button.x + 15, login_button.y + 10))
+        screen.blit(font.render("Register", True, BLACK), (register_button.x + 15, register_button.y + 10))
