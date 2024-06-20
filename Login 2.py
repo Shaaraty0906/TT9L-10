@@ -49,3 +49,7 @@ def read_database():
     with open('logindatabase.txt', 'r') as file:
         data = file.readlines()
     return {line.split(':')[0]: line.split(':')[1].strip() for line in data}
+
+def write_to_database(username, password):
+    with open('logindatabase.txt', 'a') as file:
+        file.write(f'{username}:{password}\n')
