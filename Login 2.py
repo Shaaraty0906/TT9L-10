@@ -3,12 +3,10 @@ import sys
 
 pygame.init() 
 
-# setting for screen
 width, height = 800, 600
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Login and Registration System")
 
-# Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
@@ -46,3 +44,8 @@ class InputBox:
     def draw(self, screen):
         screen.blit(self.txt_surface, (self.rect.x + 5, self.rect.y + 5))
         pygame.draw.rect(screen, self.color, self.rect, 2)
+
+def read_database():
+    with open('logindatabase.txt', 'r') as file:
+        data = file.readlines()
+    return {line.split(':')[0]: line.split(':')[1].strip() for line in data}
