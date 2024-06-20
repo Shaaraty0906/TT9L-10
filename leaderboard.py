@@ -32,4 +32,11 @@ class Leaderboard:
             with open(filename, 'r') as f:
                 self.player_times = json.load(f)
         except FileNotFoundError:
-            pass        
+            pass
+
+class Game:
+    def __init__(self):
+        self.screen = pygame.display.set_mode((1000, 800))
+        pygame.display.set_caption('Leaderboard')
+        self.leaderboard = Leaderboard()
+        self.leaderboard.load()               
