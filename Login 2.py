@@ -143,3 +143,9 @@ def register_page():
         pygame.draw.rect(screen, GRAY, back_button)
         screen.blit(font.render("Register", True, BLACK), (register_button.x + 15, register_button.y + 10))
         screen.blit(font.render("Back", True, BLACK), (back_button.x + 15, back_button.y + 10))            
+
+        screen.blit(font.render("Username:", True, BLACK), (username_box.rect.x - 150, username_box.rect.y + 5))
+        screen.blit(font.render("Password:", True, BLACK), (password_box.rect.x - 150, password_box.rect.y + 5))
+
+        draw_message(screen, message)
+        pygame.display.flip()
