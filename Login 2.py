@@ -99,3 +99,10 @@ def login_page():
 
          screen.blit(font.render("Username:", True, BLACK), (username_box.rect.x - 150, username_box.rect.y + 5))
         screen.blit(font.render("Password:", True, BLACK), (password_box.rect.x - 150, password_box.rect.y + 5))
+
+        draw_message(screen, message)
+        
+        if login_success_time and current_time - login_success_time > 3000:
+            return 'main_menu'
+        
+        pygame.display.flip()
