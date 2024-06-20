@@ -53,3 +53,7 @@ def read_database():
 def write_to_database(username, password):
     with open('logindatabase.txt', 'a') as file:
         file.write(f'{username}:{password}\n')
+
+def draw_message(screen, message):
+    msg_surface = font.render(message, True, BLACK)
+    screen.blit(msg_surface, (width//2 - msg_surface.get_width()//2, height//2 - 30))
