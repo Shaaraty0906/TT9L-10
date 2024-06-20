@@ -67,16 +67,28 @@ def play():
         pygame.display.update()
     
 def INSTRUCTION():
+    instructions = [
+        "LEVEL 1 - You have to select the tile for slide and use arrow button movement",
+        "LEVEL 2 - You have to select the tile for slide and use arrow button for movement.",
+        "After you finish this level you will have to guess the picture of the puzzle where",
+        "you have to type your answer in a space given.",
+        "LEVEL 3 - You have to drag and drop the tile in a free space to complete your puzzle.",
+        "LEADERBOARD - You can see your timing result and ranking"
+    ]
+    
     while True:
         INSTRUCTION_MOUSE_POS = pygame.mouse.get_pos()
 
         SCREEN.fill("white")
 
-        INSTRUCTION_TEXT = get_font(30).render("Game instructions will appear here!", True, "Black")
-        INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, 260))
-        SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
+        y_offset = 150
+        for line in instructions:
+            INSTRUCTION_TEXT = get_font(30).render(line, True, "Black")
+            INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, y_offset))
+            SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
+            y_offset += 40
 
-        INSTRUCTION_BACK = Button(image=None, pos=(640, 460), 
+        INSTRUCTION_BACK = Button(image=None, pos=(640, 650), 
                             text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
 
         INSTRUCTION_BACK.changeColor(INSTRUCTION_MOUSE_POS)
