@@ -135,3 +135,11 @@ def register_page():
                         message = "Username already exists!"
                 if back_button.collidepoint(event.pos):
                     return 'login'
+
+        screen.blit(background_image, (0, 0))
+        for box in boxes:
+            box.draw(screen)
+        pygame.draw.rect(screen, GRAY, register_button)
+        pygame.draw.rect(screen, GRAY, back_button)
+        screen.blit(font.render("Register", True, BLACK), (register_button.x + 15, register_button.y + 10))
+        screen.blit(font.render("Back", True, BLACK), (back_button.x + 15, back_button.y + 10))            
