@@ -70,3 +70,10 @@ class Game:
                 self.screen.blit(time_label, (50 + i * column_width, y_offset))
 
             y_offset += line_height
+
+            for i in range(len(self.leaderboard.player_times) + 1):
+            pygame.draw.line(self.screen, GRAY, (50, 20 + i * line_height), (50 + 4 * column_width, 20 + i * line_height), 1)
+            for i in range(5):
+            pygame.draw.line(self.screen, GRAY, (50 + i * column_width, 20), (50 + i * column_width, 20 + (len(self.leaderboard.player_times) + 1) * line_height), 1)
+
+            pygame.display.flip()
