@@ -83,13 +83,13 @@ def INSTRUCTION():
 
         y_offset = 150
         for line in instructions:
-            INSTRUCTION_TEXT = get_font(30).render(line, True, "Black")
+            INSTRUCTION_TEXT = get_font(14).render(line, True, "Black")
             INSTRUCTION_RECT = INSTRUCTION_TEXT.get_rect(center=(640, y_offset))
             SCREEN.blit(INSTRUCTION_TEXT, INSTRUCTION_RECT)
             y_offset += 40
 
         INSTRUCTION_BACK = Button(image=None, pos=(640, 650), 
-                            text_input="BACK", font=get_font(75), base_color="Black", hovering_color="Green")
+                            text_input="BACK", font=get_font(30), base_color="Black", hovering_color="Green")
 
         INSTRUCTION_BACK.changeColor(INSTRUCTION_MOUSE_POS)
         INSTRUCTION_BACK.update(SCREEN)
