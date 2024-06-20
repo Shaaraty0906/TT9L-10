@@ -77,3 +77,13 @@ class Game:
             pygame.draw.line(self.screen, GRAY, (50 + i * column_width, 20), (50 + i * column_width, 20 + (len(self.leaderboard.player_times) + 1) * line_height), 1)
 
             pygame.display.flip()
+
+    def run(self):
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+
+            self.display_leaderboard()
+            pygame.display.update()
