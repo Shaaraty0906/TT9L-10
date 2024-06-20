@@ -3,10 +3,9 @@ import sys
 import tkinter as tk
 from tkinter import messagebox
 
-# Initialize pygame
 pygame.init()
 
-# Initialize tkinter root for message boxes
+# for message boxes
 root = tk.Tk()
 root.withdraw()  # Hide the root window
 
@@ -33,7 +32,7 @@ username = ''
 user_password = ''
 active_box = None
 message = ''
-state = 'login'  # Initial state
+state = 'login'  
 
 def draw_text(text, font, color, surface, x, y):
     textobj = font.render(text, True, color)
@@ -56,7 +55,7 @@ def login(user, pwd):
             if a == user and b == pwd:
                 message = "Login successful!"
                 messagebox.showinfo("Login", message)
-                state = 'main_menu'  # Transition to main menu state
+                state = 'main_menu' 
                 return
 
     if not username_correct and not password_correct:
