@@ -115,3 +115,23 @@ def register_page():
     register_button = pygame.Rect(350, 400, 100, 50)
     back_button = pygame.Rect(600, 500, 150, 50)
     message = ""
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            for box in boxes:
+                box.handle_event(event)
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if register_button.collidepoint(event.pos):
+                    username = username_box.text
+                    password = password_box.text
+                    database = read_database()
+                    if username not in database:
+                        write_to_database(username, password)
+                        message = "Account registered successfully!"
+                    else:
+                        message = "Username already exists!"
+                if back_button.collidepoint(event.pos):
+                    return 'login'
