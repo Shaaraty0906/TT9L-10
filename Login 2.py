@@ -12,3 +12,5 @@ pygame.display.set_caption("Login and Registration System")
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (200, 200, 200)
+
+font = pygame.font.Font(None, 36)
