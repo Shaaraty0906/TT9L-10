@@ -17,3 +17,11 @@ font = pygame.font.Font(None, 36)
 
 background_image = pygame.image.load("loginbackground2.jpg")
 background_image = pygame.transform.scale(background_image, (width, height))
+
+class InputBox:
+    def __init__(self, x, y, w, h, text=''):
+        self.rect = pygame.Rect(x, y, w, h)
+        self.color = GRAY
+        self.text = text
+        self.txt_surface = font.render(text, True, BLACK)
+        self.active = False
