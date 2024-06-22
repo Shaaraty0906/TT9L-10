@@ -141,17 +141,18 @@ def easy_level():
         pygame.display.flip()     
           
     if is_solved(tile_order):
-        print("Puzzle Solved!")
+        time_taken = (pygame.time.get_ticks()-start_ticks) / 1000
+        display_message(screen, "Congratulations! Puzzle solved!")
         running = False
 
-pygame.quit()
+
 
 if __name__ == '__main__':
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
     pygame.display.set_caption("Sliding Puzzle")
     easy_level()
-
+    pygame.quit()
 
 
 
