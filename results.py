@@ -1,2 +1,1 @@
-# Time taken to complete the puzzle
-time_taken = 5.344
+time_taken = 1.717
