@@ -69,6 +69,9 @@ def display_message(screen, message):
     pygame.display.flip()
     pygame.time.wait(2000)
 
+def save_result(level, time_taken):
+    with open('results.txt', 'a') as file:
+        file.write(f"Level {level} completed in: {time_taken:.2f} seconds\n")
 
 def easy_level():
     grid_size = 2
@@ -138,12 +141,14 @@ def easy_level():
         exit_text = font.render("Exit", True, (0, 0, 0))
         screen.blit(exit_text, (EXIT_BUTTON_RECT.x + 20, EXIT_BUTTON_RECT.y + 5))
           
-        pygame.display.flip()     
-          
-    if is_solved(tile_order):
-        time_taken = (pygame.time.get_ticks()-start_ticks) / 1000
-        display_message(screen, "Congratulations! Puzzle solved!")
-        running = False
+        pygame.display.flip()   
+
+        if is_solved(tile_order):
+          time_taken = (pygame.time.get_ticks() - start_ticks) / 1000
+          display_message(screen, "Congratulations! Puzzle solved!")
+          save_result(1, time_taken)  # Change '1' to the appropriate level number
+          running = False  
+    
 
 
 
