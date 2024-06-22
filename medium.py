@@ -50,29 +50,48 @@ def is_solved(tile_order):
     return tile_order == list(range(len(tile_order)))
 
 def shuffle_tiles(tile_order, grid_size):
-    for _ in range(50):
-        empty_index = get_empty_index(tile_order)
-        neighbors = []
-        if empty_index % grid_size > 0:
-            neighbors.append(empty_index - 1)
-        if empty_index % grid_size < grid_size - 1:
-            neighbors.append(empty_index + 1)
-        if empty_index // grid_size > 0:
-            neighbors.append(empty_index - grid_size)
-        if empty_index // grid_size < grid_size - 1:
-            neighbors.append(empty_index + grid_size)
-        swap(tile_order, empty_index, random.choice(neighbors))
-
+    """Randomly shuffle the tiles within"""
+    moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+    empty_index = get_empty_index(tile_order)
+    empty_pos = (empty_index // grid_size, empty_index % grid_size)
+    
+    for _ in range(random.randint(1, 5)):  # Shuffle 1 to 5 moves
+        valid_moves = []
+        for move in moves:
+            new_pos = (empty_pos[0] + move[0], empty_pos[1] + move[1])
+            if 0 <= new_pos[0] < grid_size and 0 <= new_pos[1] < grid_size:
+               valid_moves.append(move)
+        move = random.choice(valid_moves)
+        new_pos = (empty_pos[0] + move[0], empty_pos[1] + move[1])
+        new_index = new_pos[0] * grid_size + new_pos[1]
+        swap(tile_order, empty_index, new_index)
+        empty_pos = new_pos
+        empty_index = new_index
+    
+    
 def display_message(message):
     screen.fill(BACKGROUND_COLOR)
     text = FONT.render(message, True, (0, 0, 0))
     screen.blit(text, (SCREEN_SIZE // 2 - text.get_width() // 2, SCREEN_SIZE // 2 - text.get_height() // 2))
     pygame.display.flip()
+    pygame.time.wait(2000)
+
+def save_results(time_taken):
+    """Save the time taken to complete the puzzle to results.py."""
+    with open('results.py', 'w') as file:
+        file.write(f"# Time taken to complete the puzzle\n")
+        file.write(f"time_taken = {time_taken}\n")
 
 def medium_level():
     grid_size = 3  
     image_path = 'tiger.jpg'
-    tiles = load_image(image_path, grid_size)
+    try:
+       tiles = load_image(image_path, grid_size)
+    except pygame.error as e:
+       print(f"Error loading image: {e}")
+       return
+    
+    
     tile_order = list(range(len(tiles)))
     shuffle_tiles(tile_order, grid_size)  
 
@@ -135,12 +154,20 @@ def medium_level():
           
         # Puzzle Solved
         if is_solved(tile_order):
-            print("Puzzle Solved!")
-            running = False
+           time_taken = (pygame.time.get_ticks() - start_ticks) / 1000
+           save_results(time_taken)  # Save the time taken to results.py
+           display_message(screen, "Congratulations! Puzzle solved!")
+           pygame.time.delay(2000)  # Pause for 2 seconds
+           running = False
+       
+       
 
         pygame.display.flip()
 
-    #ANSWER
+    # Guessing game
+    guessing_game(screen)
+
+def guessing_game(screen):   
     guessing = True
     user_guess = ""
     input_box = pygame.Rect(SCREEN_SIZE // 2 - 100, SCREEN_SIZE // 2,200,50)
