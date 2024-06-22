@@ -146,8 +146,7 @@ def INSTRUCTION():
         "LEVEL 2 - You have to select the tile for slide and use arrow button for movement.",
         "After you finish this level you will have to guess the picture of the puzzle where",
         "you have to type your answer in a space given.",
-        "LEVEL 3 - You have to drag and drop the tile in a free space to complete your puzzle.",
-        "LEADERBOARD - You can see your timing result and ranking"
+        "LEVEL 3 - You have to drag and drop the tile in a free space to complete your puzzle."
     ]
     
     while True:
