@@ -61,6 +61,15 @@ def shuffle_tiles(tile_order, grid_size):
             neighbors.append(empty_index + grid_size)
         swap(tile_order, empty_index, random.choice(neighbors))
 
+def display_message(screen, message):
+    screen.fill(BACKGROUND_COLOR)
+    font = pygame.font.Font(None, 30)
+    text = font.render(message, True, (0, 0, 0))
+    screen.blit(text, (SCREEN_SIZE // 2 - text.get_width() // 2, SCREEN_SIZE // 2 - text.get_height() // 2))
+    pygame.display.flip()
+    pygame.time.wait(2000)
+
+
 def easy_level():
     grid_size = 2
     # Update this path to the actual path where 'bull.jpg' is located
