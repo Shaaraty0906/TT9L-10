@@ -59,8 +59,15 @@ def shuffle_tiles(tile_order, grid_size):
             neighbors.append(empty_index + grid_size)
         swap(tile_order, empty_index, random.choice(neighbors))
 
-def easy_level(screen):
-    grid_size = 4
+def display_message(screen, message):
+    screen.fill(BACKGROUND_COLOR)
+    font = pygame.font.Font(None, 36)
+    text = font.render(message, True, (0, 0, 0))
+    screen.blit(text, (SCREEN_SIZE // 2 - text.get_width() // 2, SCREEN_SIZE // 2 - text.get_height() // 2))
+    pygame.display.flip()
+
+def hard_level(screen):
+    grid_size = 5
     image_path = 'dog.jpg'
     tiles = load_image(image_path, grid_size)
     tile_order = list(range(len(tiles)))
@@ -137,13 +144,15 @@ def easy_level(screen):
         pygame.display.flip()
 
         if is_solved(tile_order):
-            print("Puzzle Solved!")
+            display_message(screen, "Congratulations! Puzzle solved!")
+            pygame.time.delay(2000)  # Pause for 2 seconds
             running = False
-pygame.quit()
+
+    # After the puzzle is solved and message displayed, return to menu (not implemented in this snippet)
+    pygame.quit()
 
 if __name__ == '__main__':
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_SIZE, SCREEN_SIZE))
     pygame.display.set_caption("Sliding Puzzle")
-    easy_level(screen)
-    
+    hard_level(screen)
