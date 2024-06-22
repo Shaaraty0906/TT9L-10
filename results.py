@@ -1,1 +1,1 @@
-time_taken = 1.717
+time_taken = 3.962

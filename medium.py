@@ -17,6 +17,19 @@ PAUSE_BUTTON_RECT = pygame.Rect(500, 10, 80, 40)
 EXIT_BUTTON_RECT = pygame.Rect(500, 60, 80, 40)
 FONT = pygame.font.Font(None, 36)
 
+def load_image(image_path, grid_size):
+    image = pygame.image.load(image_path)
+    image = pygame.transform.scale(image, (SCREEN_SIZE, SCREEN_SIZE))
+    tiles = []
+    tile_width = SCREEN_SIZE // grid_size
+    tile_height = SCREEN_SIZE // grid_size
+    for i in range(grid_size):
+        for j in range(grid_size):
+            rect = pygame.Rect(j * tile_width, i * tile_height, tile_width, tile_height)
+            tile_image = image.subsurface(rect).copy()
+            tiles.append(tile_image)
+    return tiles
+
 def get_empty_index(tile_order):
     return tile_order.index(len(tile_order) - 1)
 
